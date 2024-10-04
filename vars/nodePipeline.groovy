@@ -15,7 +15,7 @@ spec:
           mode: 0777
           path: "config.json"
   containers:
-  - name: shell
+  - name: alpine
     image: alpine
     command:
     - sleep
