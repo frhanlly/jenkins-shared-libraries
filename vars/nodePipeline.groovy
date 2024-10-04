@@ -16,7 +16,7 @@ spec:
           path: "config.json"
   containers:
   - name: shell
-    image: ubuntu
+    image: alpine
     command:
     - sleep
     args:
@@ -83,6 +83,18 @@ spec:
         }
       } 
     
+      stage("Updating image version in DEVELOPMENT"){
+        steps{
+          nodeImageUpdate()
+        }
+
+        when {
+          anyOf {
+            branch 'development';
+          }
+        }
+      }
+
     } 
 
 
