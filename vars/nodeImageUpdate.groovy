@@ -7,7 +7,7 @@ def call(){
 
         VALUES_FILE="charts/values.yaml"
 
-        apk add git
+        apk add git openssh
          git clone git@github.com:frhanlly/simple-app-helm.git
          cd simple-app-helm
          git switch development
