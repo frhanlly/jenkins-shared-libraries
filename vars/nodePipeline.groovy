@@ -14,6 +14,12 @@ spec:
         - key: ".dockerconfigjson"
           mode: 0777
           path: "config.json"
+    - name: sshkey
+      secret:
+        secretName: ssh-github
+        items:
+        - key: ssh_github
+          mode: 0444
   containers:
   - name: alpine
     image: alpine
@@ -21,6 +27,10 @@ spec:
     - sleep
     args:
     - infinity
+    volumeMounts:
+    - mountPath: /root/.ssh/id_rsa
+      name: sshkey
+      subPath: ssh_github
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
     command:
