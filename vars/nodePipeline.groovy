@@ -21,9 +21,6 @@ spec:
     - sleep
     args:
     - infinity
-    securityContext:
-      # ubuntu runs as root by default, it is recommended or even mandatory in some environments (such as pod security admission "restricted") to run as a non-root user.
-      runAsUser: 1000
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
     command:
