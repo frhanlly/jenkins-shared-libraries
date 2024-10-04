@@ -8,6 +8,7 @@ def call(){
         VALUES_FILE="charts/values.yaml"
 
         apk add git openssh
+        ssh-keyscan github.com ${HOME}/.ssh/known_hosts
          git clone git@github.com:frhanlly/simple-app-helm.git
          cd simple-app-helm
          git switch development
