@@ -19,7 +19,7 @@ spec:
         secretName: ssh-github
         items:
         - key: "ssh_github"
-          mode: 0444
+          mode: 0770
           path: "ssh_github"
   containers:
   - name: alpine
