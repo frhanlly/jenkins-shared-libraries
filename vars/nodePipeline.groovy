@@ -83,12 +83,6 @@ spec:
           nodeImagePromotion()
         }
 
-        when {
-          anyOf {
-            branch 'main';
-            branch 'release'
-          }
-        }
       } 
     
       stage("Updating image version in DEVELOPMENT"){
