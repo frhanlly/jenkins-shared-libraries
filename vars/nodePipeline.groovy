@@ -84,7 +84,7 @@ spec:
         }
         when {
           anyOf {
-            branch 'development';
+            branch 'release';
             branch 'main'
           }
         }
