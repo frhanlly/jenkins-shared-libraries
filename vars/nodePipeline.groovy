@@ -82,7 +82,12 @@ spec:
         steps{
           nodeImagePromotion()
         }
-
+        when {
+          anyOf {
+            branch 'development';
+            branch 'main'
+          }
+        }
       } 
     
       stage("Updating image version in DEVELOPMENT"){
